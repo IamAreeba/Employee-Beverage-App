@@ -1,35 +1,45 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Navbar.css'
-import {  assets } from '../../assets/assets'
+import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom'
+import { StoreContext } from '../../context/StoreContext'
 
-const Navbar = ({setShowLogin}) => {
+const Navbar = ({ setShowLogin }) => {
 
     const [menu, setMenu] = useState("home")
 
-  return (
-    <div className='navbar'>
-        <img src={assets.logo} alt="" className='logo' />
-        <ul className="navbar-menu">
-            <Link to='/' onClick={()=> { setMenu("home") }} className={menu === 'home' ? 'active': ''}>Home</Link>
-            <a href='#explore-menu' onClick={()=> { setMenu("menu") }} className={menu === 'menu' ? 'active': ''}>Menu</a>
-            <a href='#app-download' onClick={()=> { setMenu("mobile") }} className={menu === 'mobile' ? 'active': ''}>Mobile-App</a>
-            <a href='#footer' onClick={()=> { setMenu("contact") }} className={menu === 'contact' ? 'active': ''}>Contact Us</a>
-        </ul>
+    const{ getTotalCartAmount }  = useContext(StoreContext)
 
-        <div className="navbar-right">
-            <img src={assets.search_icon} alt="" />
+    return (
+        <div className='navbar'>
 
-            <div className="navbar-search-icon">
-                <img src={assets.basket_icon} alt="" />
-                <div className="dot"></div>
-            </div>
+            {/* Here attaching the Home route to logo also */}
+            <Link to='/' > <img src={assets.logo} alt="" className='logo' /> </Link>
             
-            <button onClick={ () => setShowLogin(true) } >  Sign In </button>
+            <ul className="navbar-menu">
+                <Link to='/' onClick={() => { setMenu("home") }} className={menu === 'home' ? 'active' : ''}>Home</Link>
+                <a href='#explore-menu' onClick={() => { setMenu("menu") }} className={menu === 'menu' ? 'active' : ''}>Menu</a>
+                <a href='#app-download' onClick={() => { setMenu("mobile") }} className={menu === 'mobile' ? 'active' : ''}>Mobile-App</a>
+                <a href='#footer' onClick={() => { setMenu("contact") }} className={menu === 'contact' ? 'active' : ''}>Contact Us</a>
+            </ul>
+
+            <div className="navbar-right">
+                <img src={assets.search_icon} alt="" />
+
+                <div className="navbar-search-icon">
+
+                    {/* Now here for i am attaching the route on this img */}
+                    <Link to='/cart' > <img src={assets.basket_icon} alt="" /> </Link>
+
+                    {/* <div className="dot"></div> */}
+                    <div className= {getTotalCartAmount() === 0 ? "" : "dot"} ></div>
+                </div>
+
+                <button onClick={() => setShowLogin(true)} >  Sign In </button>
+            </div>
+
         </div>
-        
-    </div>
-  )
+    )
 }
 
 export default Navbar 
