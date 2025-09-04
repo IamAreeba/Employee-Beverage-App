@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import "./FoodItem.css"
 import { assets } from '../../assets/assets'
+import { StoreContext } from '../../context/StoreContext'
 
 const FoodItem = ({ id, name, description, image, price }) => {
 
-    const [itemCount, setItemCount] = useState(0)
+    // const [itemCount, setItemCount] = useState(0)
+    const { cartItems, addToCart, removeFromCart } = useContext(StoreContext)
 
     return (
         <div>
@@ -16,25 +18,28 @@ const FoodItem = ({ id, name, description, image, price }) => {
                     {/* We check if the fooditem count=0 we provide btn if count>0 we provide 1 counter */}
 
                     {
-                        !itemCount
+                        !cartItems[id]
                             ? <img
                                 className='add'
-                                onClick={() => setItemCount(prev => prev + 1)}
+                                // onClick={() => setItemCount(prev => prev + 1)}
+                                onClick={() => addToCart(id)}
                                 src={assets.add_icon_white}
                                 alt=""
                             />
 
                             : <div className="food-item-counter">
                                 <img
-                                    onClick={() => { setItemCount(prev => prev - 1) }}
+                                    // onClick={() => { setItemCount(prev => prev - 1) }}
+                                    onClick={() => removeFromCart(id)}
                                     src={assets.remove_icon_red}
                                     alt=""
                                 />
 
-                                <p>{itemCount}</p>
+                                <p>{cartItems[id]}</p>
 
                                 <img
-                                    onClick={() => { setItemCount(prev => prev + 1) }}
+                                    // onClick={() => { setItemCount(prev => prev + 1) }}
+                                    onClick={() => addToCart(id)}
                                     src={assets.add_icon_green}
                                     alt=""
                                 />

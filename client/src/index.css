@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Outfit;
+  scroll-behavior: smooth;
 }
 
 body{
@@ -19,7 +20,7 @@ a{
 /* CSS For App.jsx */
 .app{
   width: 80%;
-  margin: auto;
+  margin: auto; 
 }
 
 
