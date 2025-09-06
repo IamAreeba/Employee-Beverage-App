@@ -31,6 +31,17 @@ const LoginSignUp = ({ setShowLogin }) => {
           <p> By continuing i agree to the terms of use & privacy policy </p>
         </div>
 
+        <div style={{ marginTop: "20px", textAlign: "center" }}>
+        <a
+          href={"http://localhost:5173"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="admin-link"
+        >
+          Go to Admin Portal
+        </a>
+      </div>
+
         {currState === 'Login'
           ? <p> Create a new Account ? <span onClick={ ()=> setCurrState("Sign Up") } > Click Here </span> </p>
           : <p> Already Have an account? <span onClick={ ()=> setCurrState("Login") } > Login Here </span> </p>
