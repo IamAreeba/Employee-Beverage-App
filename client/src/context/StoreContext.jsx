@@ -1,11 +1,18 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { food_list } from "../assets/assets";
+import axiosInstance from "../axios";
 export const StoreContext = createContext(null)
 
 
 const StoreContextProvider = (props) => {
 
     const [cartItems, setCartItems] = useState({})
+    // Storing token
+    const [token, setToken] = useState("")
+
+
+    const url = "http://localhost:5000"
+
 
     const addToCart = (itemId) => {
         // 1st checking if the user is adding the product first time in cart
@@ -46,9 +53,18 @@ const StoreContextProvider = (props) => {
 
     }
 
+    // useEffect(() => {
+    //     console.log(cartItems)
+    // }, [cartItems])
+
+
+    // The token wasnt storing in the state thats why getting the SignIn btn on reload so saved in state
     useEffect(() => {
-        console.log(cartItems)
-    }, [cartItems])
+        if(localStorage.getItem("token")){
+            setToken(localStorage.getItem("token"))
+        }
+    }, [])
+
 
     const ContextValue = {
         food_list,
@@ -56,7 +72,8 @@ const StoreContextProvider = (props) => {
         setCartItems,
         addToCart,
         removeFromCart,
-        getTotalCartAmount
+        getTotalCartAmount,
+        axiosInstance, url, token, setToken
     }
 
     return (
