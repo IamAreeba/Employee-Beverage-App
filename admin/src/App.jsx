@@ -7,9 +7,14 @@ import List from './pages/List/List'
 import Orders from './pages/Orders/Orders'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import axios from 'axios'
+
 
 const App = () => {
 
+  axios.defaults.withCredentials = true
+  axios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL
+  
   const url = "http://localhost:5000"
 
   return (
