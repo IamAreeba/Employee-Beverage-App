@@ -9,7 +9,7 @@ const Menu = () => {
     
     <div>
       {/* <Header  /> */}
-      <ExploreMenu category={category} setCategory={setCategory} />
+      {/* <ExploreMenu category={category} setCategory={setCategory} /> */}
       <FoodDisplay category={category} />
     </div>
   )

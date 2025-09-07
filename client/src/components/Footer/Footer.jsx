@@ -31,14 +31,14 @@ const Footer = () => {
                 <h2> GET IN TOUCH </h2>
                 <ul>
                     <li>+92-012-345-6789</li>
-                    <li>contact@tomato.com</li>
+                    <li>contact@brewbreak.com</li>
                 </ul>
             </div>
 
         </div>
 
         <hr />
-        <p className='footer-copyright'> Copyright 2024 @Tomato.com - All Rights Reserved. </p>
+        <p className='footer-copyright'> Copyright 2024 @brewbreak.com - All Rights Reserved. </p>
     </div>
   )
 }

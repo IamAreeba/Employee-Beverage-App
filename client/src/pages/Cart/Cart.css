@@ -9,7 +9,7 @@
   align-items: center;
   color: grey;
   font-size: max(1vw, 12px);
-  gap: 8px; /* space between columns */
+  gap: 8px;
 }
 
 .cart-items-item select,
@@ -84,15 +84,13 @@
 .cart-total button{
     border: none;
     color: white;
-    background-color: tomato;
+    background-color: #63be6e;
     width: max(15vw, 200px);
     padding: 12px 0px;
     border-radius: 4px;
     cursor: pointer;
 }
 
-
-/* Promo Code Work */
 .cart-promocode{
     flex: 1;
 }

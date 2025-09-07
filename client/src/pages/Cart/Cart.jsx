@@ -1,12 +1,32 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './Cart.css'
 import { StoreContext } from '../../context/StoreContext'
 import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
 
-  const { cartItems, food_list, addToCart, removeFromCart, getTotalCartAmount } = useContext(StoreContext)
+  const { cartItems, food_list, addToCart, removeFromCart, getTotalCartAmount, url } = useContext(StoreContext)
   const navigate = useNavigate()
+
+
+  const [customizations, setCustomizations] = useState({});
+
+  const onCustomizationChange = (itemId, e) => {
+    const { name, value } = e.target;   // name = sugar, cupSize, etc.
+    setCustomizations(prev => {
+      const updated = {
+        ...prev,
+        [itemId]: {
+          ...prev[itemId],   // keep previous values
+          [name]: value      // update the specific field
+        }
+      };
+      console.log("Updated customizations:", updated);
+      return updated;
+    });
+  };
+
+
 
 
   return (
@@ -41,36 +61,59 @@ const Cart = () => {
           if (cartItems[item._id] > 0) {
             return (
 
-              <>
 
-                <div className='cart-item-title cart-items-item' >
+
+              <div key={item._id} >
+
+
+                <div key={item._id} className='cart-item-title cart-items-item' >
 
                   {/* <p>{item.name}</p> */}
-                  <img src={item.image} alt="" />
+                  <img src={url + "/images/" + item.image} alt="" />
                   <p>{item.name}</p>
                   <p> ₨ {item.price} </p>
-                  <p> {cartItems[item._id]} </p>  {/* This will give quantity of the product */}
-                  <p> ₨ {item.price * cartItems[item._id]} </p>           {/* Here we * quantity with price */}
+                  <p> {cartItems[item._id]} </p>                     {/* This will give quantity of the product */}
+                  <p> ₨ {item.price * cartItems[item._id]} </p>      {/* Here we * quantity with price */}
 
 
 
-                  <select>
-                    <option>No sugar</option>
-                    <option>Less sugar</option>
-                    <option>Normal</option>
-                    <option>Extra sugar</option>
+                  <select
+                    name="sugar"
+                    value={customizations[item._id]?.sugar || ""}
+                    onChange={(e) => onCustomizationChange(item._id, e)}
+                  >
+                    <option value="">Select sugar</option>
+                    <option value="No sugar">No sugar</option>
+                    <option value="Less sugar">Less sugar</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Extra sugar">Extra sugar</option>
                   </select>
 
-                  <select>
-                    <option>Small</option>
-                    <option>Medium</option>
-                    <option>Large</option>
+                  <select
+                    name="cupSize"
+                    value={customizations[item._id]?.cupSize || ""}
+                    onChange={(e) => onCustomizationChange(item._id, e)}
+                  >
+                    <option value="">Select size</option>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
                   </select>
 
-                  <input type="time" />
+                  <input
+                    type="time"
+                    name="deliveryTime"
+                    value={customizations[item._id]?.deliveryTime || ""}
+                    onChange={(e) => onCustomizationChange(item._id, e)}
+                  />
 
-                  {/* <input type="text" placeholder="Comments" /> */}
-                  <textarea></textarea>
+                  <textarea
+                    name="comments"
+                    value={customizations[item._id]?.comments || ""}
+                    onChange={(e) => onCustomizationChange(item._id, e)}
+                  ></textarea>
+
+
 
                   {/* <input type="checkbox" /> */}
                   <p className='cross' onClick={() => removeFromCart(item._id)} > X </p>
@@ -78,8 +121,7 @@ const Cart = () => {
                 </div>
 
                 <hr />
-
-              </>
+              </div>
 
 
 
@@ -100,13 +142,17 @@ const Cart = () => {
 
             <div className="cart-total-details"> <p> Subtotal </p> <p> ₨ {getTotalCartAmount()}  </p> </div>
             <hr />
-            <div className="cart-total-details"> <p> Service Fee </p> <p> ₨ { getTotalCartAmount() === 0 ? 0 : 2 } </p> </div>
+            <div className="cart-total-details"> <p> Service Fee </p> <p> ₨ {getTotalCartAmount() === 0 ? 0 : 2} </p> </div>
             <hr />
             <div className="cart-total-details"> <b> Total </b> <b> ₨ {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2} </b> </div>
 
           </div>
 
-          <button onClick={ ()=> navigate('/order') } > PROCEED TO CHECKOUT </button>
+          <button onClick={() => navigate('/order', { state: { customizations } })}>
+            PROCEED TO CHECKOUT
+          </button>
+
+
         </div>
 
         {/* Promo Code Work */}

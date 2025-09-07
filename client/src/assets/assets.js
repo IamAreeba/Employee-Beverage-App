@@ -1,40 +1,46 @@
 import basket_icon from './basket_icon.png'
-import logo from './s6.png'
+import logo from './logo01.png'
 import footerLogo from './s8.png'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
-import menu_1 from './Coffee/01.jpg'
-import menu_2 from './Juice/ju.png'
-import menu_3 from './menu_3.png'
-import menu_4 from './menu_4.png'
-import menu_5 from './menu_5.png'
-import menu_6 from './menu_6.png'
-import menu_7 from './menu_7.png'
+
+
+import menu_1 from './Coffee/Coffee.jpg'
+import menu_2 from './Juice/Juice.png'
+import menu_3 from './Desserts/Dessert.png'
+import menu_4 from './Sandwich/sandwish.png'
+import menu_5 from './Desserts/cakess.png'
+import menu_6 from './Green Tea/green tea.png'
+import menu_7 from './Regular Tea/regular tea.png'
 import menu_8 from './menu_8.png'
 
-// Salad --  Coffee
-import food_1 from './Coffee/02.jpg'
-import food_2 from './Coffee/03.jpg'
-import food_3 from './Coffee/04.jpg'
-import food_4 from './Coffee/05.jpg'
+// Coffee
+import food_1 from './Coffee/Americano.jpg'
+import food_2 from './Coffee/Cappuccino.jpg'
+import food_3 from './Coffee/Espresso.jpg'
+import food_4 from './Coffee/Latte.jpg'
 
 // Juice
-import food_5 from './Juice/01 Green vegetable juice.jpg'
+import food_5 from './Juice/01 Green vegetable juice.png'
 import food_6 from './Juice/02 Orange juice.jpg'
 import food_7 from './Juice/03 Beet Juice.jpg'
 import food_8 from './Juice/05 pineapple Juice.jpg'
 
+
 // Green Tea
-import food_9 from './Green Tea/01 Plain Green Tea.jpg'
-import food_10 from './Green Tea/02 Jasmine Green Tea.jpg'
-import food_11 from './Green Tea/03 Lemon Green Tea.jpg'
-import food_12 from './Green Tea/04 Mint Green Tea.jpg'
+import food_9 from './Green Tea/Plain Green Tea.png'
+import food_10 from './Green Tea/Jasmine Green Tea.png'
+import food_11 from './Green Tea/Lemon Green Tea.png'
+import food_12 from './Green Tea/Mint Green Tea.png'
 
 
+// Regular Tea
 import food_13 from './food_13.png'
 import food_14 from './food_14.png'
 import food_15 from './food_15.png'
 import food_16 from './food_16.png'
+
+
 import food_17 from './food_17.png'
 import food_18 from './food_18.png'
 import food_19 from './food_19.png'
@@ -93,37 +99,41 @@ export const assets = {
 
 export const menu_list = [
     {
-        menu_name: "Salad",
+        menu_name: "Coffee",
         menu_image: menu_1
     },
     {
-        menu_name: "Rolls",
+        menu_name: "RegularTea",
+        menu_image: menu_7
+    },
+    {
+        menu_name: "Juice",
         menu_image: menu_2
     },
     {
-        menu_name: "Deserts",
-        menu_image: menu_3
+        menu_name: "GreenTea",
+        menu_image: menu_6
     },
     {
+        menu_name: "Desserts",
+        menu_image: menu_3
+    },
+    {   
         menu_name: "Sandwich",
         menu_image: menu_4
     },
     {
-        menu_name: "Cake",
+        menu_name: "Cakes",
         menu_image: menu_5
     },
-    {
-        menu_name: "Pure Veg",
-        menu_image: menu_6
-    },
-    {
-        menu_name: "Pasta",
-        menu_image: menu_7
-    },
-    {
-        menu_name: "Noodles",
-        menu_image: menu_8
-    }]
+    ,
+    
+    // {
+    //     menu_name: "Noodles",
+    //     menu_image: menu_8
+    // }
+
+]
 
 export const food_list = [
     {

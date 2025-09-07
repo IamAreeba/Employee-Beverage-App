@@ -6,6 +6,9 @@
     box-shadow: 0px 0px 10px #00000015;
     transition: 0.3s;
     animation: fadeIn 1s;
+
+    background-color: #e8f5e9;
+    border: 1px solid #eaecea; 
 }
 
 .food-item-image{
@@ -40,7 +43,7 @@
 }
 
 .food-item-price{
-    color: tomato;
+    color: #2e7d32;
     font-size: 22px;
     font-weight: 500;
     margin: 10px 10px;

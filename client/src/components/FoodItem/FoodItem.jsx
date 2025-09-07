@@ -2,18 +2,19 @@ import React, { useState, useContext } from 'react'
 import "./FoodItem.css"
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext'
+import axiosInstance from '../../axios'
 
 const FoodItem = ({ id, name, description, image, price }) => {
 
     // const [itemCount, setItemCount] = useState(0)
-    const { cartItems, addToCart, removeFromCart } = useContext(StoreContext)
+    const { cartItems, addToCart, removeFromCart, url } = useContext(StoreContext)
 
     return (
         <div>
             <div className="food-item">
 
                 <div className="food-item-img-container">
-                    <img className="food-item-image" src={image} alt="" />
+                    <img className="food-item-image" src={url+"/images/"+image} alt="" />
 
                     {/* We check if the fooditem count=0 we provide btn if count>0 we provide 1 counter */}
 

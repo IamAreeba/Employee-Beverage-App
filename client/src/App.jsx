@@ -8,6 +8,7 @@ import Menu from './pages/Menu/Menu'
 import Footer from './components/Footer/Footer'
 import AppDownload from './components/AppDownload/AppDownload'
 import LoginSignUp from './components/Login/LoginSignUp'
+import MyOrder from './pages/MyOrders/MyOrder'
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
           <Route path='/menu' element={<Menu />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<PlaceOrder />} />
+          <Route path='myorders' element={ <MyOrder /> } />
         </Routes>
 
         <AppDownload  />

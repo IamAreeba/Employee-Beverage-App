@@ -3,9 +3,8 @@
     height: 34vw;
     margin: 30px auto;
     background: url('/Gem3.png') no-repeat;
-    background-size: cover;   /* make it cover the container */
-    background-position: bottom;  /* show the bottom portion */
-       /* background-size: contain; */
+    background-size: cover;   
+    background-position: bottom;  
     position: relative;
     border-radius: 20px;
 }

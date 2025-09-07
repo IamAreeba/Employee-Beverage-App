@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './List.css'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import axiosInstance from '../../axios'
 
 const List = ({url}) => {
 
@@ -11,7 +12,7 @@ const List = ({url}) => {
 
     // Fetching all food data from DB
     const fetchList = async () => {
-      const response = await axios.get(`${url}/api/food/list`)
+      const response = await axiosInstance.get('/api/food/list')
       console.log(response.data)
       if(response.data.success){
         setList(response.data.data)

@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.order-item {
+  display: grid;
+  grid-template-columns: 50px 1fr 80px 80px 80px; 
+  align-items: start;
+  gap: 15px;
+  border: 1px solid rgb(24, 155, 100);
+  padding: 15px;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #505050;
+}
+
+.order-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.order-item-food {
+  white-space: normal; 
+  overflow: hidden;
+}
+
+.order-item-food,
+.order-item-name {
+  font-weight: 600;
+}
+
+.order-item select {
+  background-color: #dcf1e3;
+  border: 1px solid rgb(81, 184, 108);
+  width: 100%;
+  padding: 8px;
+  outline: none;
+}
+
+@media (max-width: 500px) {
+  .order-item {
+    grid-template-columns: 50px 1fr; 
+    gap: 10px;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .order-item .order-item-food,
+  .order-item .order-item-name {
+    font-size: 14px;
+  }
+
+  .order-item select {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .order-item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .order-item-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+}

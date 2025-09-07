@@ -3,8 +3,9 @@ import "./Add.css"
 import { assets } from '../../assets/assets'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import axiosInstance from '../../axios'
 
-const Add = ({url}) => {
+const Add = ({ url }) => {
 
     // const url = "http://localhost:5000"
     // Setting the image
@@ -14,7 +15,7 @@ const Add = ({url}) => {
         name: "",
         description: "",
         price: "",
-        category: "Salad",
+        category: "Coffee",
     })
 
     const onChangeHandler = (e) => {
@@ -45,13 +46,13 @@ const Add = ({url}) => {
 
         // Now doing API call
         // We tested on backend with passing data throigh form so passed formData
-        const response = await axios.post(`${url}/api/food/add`, formData)
+        const response = await axiosInstance.post(`${url}/api/food/add`, formData)
         if (response.data.success) {
             setData({
                 name: "",
                 description: "",
                 price: "",
-                category: "Salad",
+                category: "Coffee",
             })
             setImage(false)
             toast.success(response.data.message)
@@ -113,14 +114,13 @@ const Add = ({url}) => {
                     <div className="add-category flex-col">
                         <p>Product Category</p>
                         <select onChange={onChangeHandler} name="category">
-                            <option value="Salad">Salad</option>
-                            <option value="Rolls">Rolls</option>
+                            <option value="Coffee">Coffee</option>
+                            <option value="Juice">Juice</option>
+                            <option value="GreenTea">GreenTea</option>
+                            <option value="RegularTea">RegularTea</option>
                             <option value="Desserts">Desserts</option>
                             <option value="Sandwich">Sandwich</option>
                             <option value="Cake">Cake</option>
-                            <option value="Pure Veg">Pure Veg</option>
-                            <option value="Pasta">Pasta</option>
-                            <option value="Noodles">Noodles</option>
                         </select>
                     </div>
 

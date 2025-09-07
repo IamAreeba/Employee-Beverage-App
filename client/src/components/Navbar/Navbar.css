@@ -38,7 +38,7 @@
     background: transparent;
     font-size: 16px;
     color: #49557e;
-    border: 1px solid tomato;
+    border: 1px solid #63be6e;
     padding: 10px 30px;
     border-radius: 50px;
     cursor: pointer;
@@ -46,7 +46,7 @@
 }
 
 .navbar button:hover{
-    background-color: #fff4f2;
+    background-color: #d4edd7;
 }
 
 .navbar .active{
@@ -130,13 +130,13 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: #fafafa;   /* light gray instead of pure white */
+    background-color: #fafafa;  
     padding: 12px 20px;
-    border: 1px solid #ddd;      /* subtle border */
-    border-radius: 8px;          /* smooth corners */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* soft shadow for contrast */
+    border: 1px solid #ddd;      
+    border-radius: 8px;          
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
     list-style: none;
-    z-index: 100;                /* makes sure it stays above other elements */
+    z-index: 100;            
 }
 
 .nav-profile-dropdown li{
