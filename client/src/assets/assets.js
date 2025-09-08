@@ -31,7 +31,7 @@ import food_8 from './Juice/05-pineapple-Juice.jpg'
 import food_9 from './Green-Tea/Plain-Green-Tea.png'
 import food_10 from './Green-Tea/Jasmine-Green-Tea.png'
 import food_11 from './Green-Tea/Lemon-Green-Tea.png'
-import food_12 from './Green-Tea/Mint-Green-Tea.png'
+import food_12 from './Green-Tea/mint-green-tea.png'
 
 
 // Regular Tea
