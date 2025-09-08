@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import axiosInstance from '../../axios';
+import { toast } from 'react-toastify'
 
 const PlaceOrder = () => {
 
@@ -65,13 +66,14 @@ const placeOrder = async (e) => {
     console.log("✅ Backend replied:", response.data);
 
     if (response.data.success) {
-      alert("Order placed");
+      toast("Order Placed Successfully")
+      
     } else {
-      alert("Error placing order");
+      toast("Error placing order");
     }
   } catch (err) {
     console.error("❌ Error placing order:", err);
-    alert("Something went wrong while placing order");
+    toast("Something went wrong while placing order");
   }
 };
 
@@ -126,7 +128,7 @@ const placeOrder = async (e) => {
 
             </div>
 
-            <button type="submit">
+            <button onClick={() => navigate('/myorders')} type="submit">
               PLACE ORDER
             </button>
 

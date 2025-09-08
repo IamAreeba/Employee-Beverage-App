@@ -9,6 +9,8 @@ import Footer from './components/Footer/Footer'
 import AppDownload from './components/AppDownload/AppDownload'
 import LoginSignUp from './components/Login/LoginSignUp'
 import MyOrder from './pages/MyOrders/MyOrder'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
 
@@ -16,6 +18,7 @@ const App = () => {
 
   return (
     <>
+      <ToastContainer />
     {showLogin ? <LoginSignUp setShowLogin={setShowLogin} /> : <> </> }
 
       <div className="app">

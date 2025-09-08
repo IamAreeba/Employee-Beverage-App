@@ -10,8 +10,8 @@ import menu_2 from './Juice/Juice.png'
 import menu_3 from './Desserts/Dessert.png'
 import menu_4 from './Sandwich/sandwish.png'
 import menu_5 from './Desserts/cakess.png'
-import menu_6 from './Green Tea/green tea.png'
-import menu_7 from './Regular Tea/regular tea.png'
+import menu_6 from './Green-Tea/green-tea.png'
+import menu_7 from './Regular-Tea/regular-tea.png'
 import menu_8 from './menu_8.png'
 
 // Coffee
@@ -21,17 +21,17 @@ import food_3 from './Coffee/Espresso.jpg'
 import food_4 from './Coffee/Latte.jpg'
 
 // Juice
-import food_5 from './Juice/01 Green vegetable juice.png'
-import food_6 from './Juice/02 Orange juice.jpg'
-import food_7 from './Juice/03 Beet Juice.jpg'
-import food_8 from './Juice/05 pineapple Juice.jpg'
+import food_5 from './Juice/01-Green-vegetable-juice.png'
+import food_6 from './Juice/02-Orange-juice.jpg'
+import food_7 from './Juice/03-Beet-Juice.jpg'
+import food_8 from './Juice/05-pineapple-Juice.jpg'
 
 
 // Green Tea
-import food_9 from './Green Tea/Plain Green Tea.png'
-import food_10 from './Green Tea/Jasmine Green Tea.png'
-import food_11 from './Green Tea/Lemon Green Tea.png'
-import food_12 from './Green Tea/Mint Green Tea.png'
+import food_9 from './Green-Tea/Plain-Green-Tea.png'
+import food_10 from './Green-Tea/Jasmine-Green-Tea.png'
+import food_11 from './Green-Tea/Lemon-Green-Tea.png'
+import food_12 from './Green-Tea/Mint-Green-Tea.png'
 
 
 // Regular Tea
