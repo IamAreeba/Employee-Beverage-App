@@ -11,7 +11,7 @@ import orderRouter from './routes/orderRoute.js'
 const app = express()
 
 // Allowing to access from multiple origin
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:5174']
+const allowedOrigins = ['http://localhost:5173', 'http://localhost:5174', 'https://employee-beverage-client.vercel.app']
 
 // middleware Config
 app.use(express.json())
