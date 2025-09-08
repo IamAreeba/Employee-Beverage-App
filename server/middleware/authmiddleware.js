@@ -1,35 +1,21 @@
+import jwt from "jsonwebtoken";
 
-import jwt from "jsonwebtoken"
-
-
-// This middleware take the token and convert it in userId and with that id we can add, remove,get data from cart
 const authMiddleware = (req, res, next) => {
-    const {token} = req.cookies
+    // Read token from Authorization header
+    const authHeader = req.headers.authorization;
+    const token = authHeader ? authHeader.split(" ")[1] : null;
 
-    if(!token){
-        return res.json({ success: false, message: "Not Authorized Login Again" })
+    if (!token) {
+        return res.json({ success: false, message: "Not Authorized Login Again" });
     }
 
     try {
-        const tokenDecode = jwt.verify(token, process.env.JWT_SECRET)
-        if(tokenDecode.id){
-            // req.body.userId = tokenDecode.id
-            req.userId = tokenDecode.id
-        }
-        else{
-            return res.json({ success: false, message: "Not Authorized" })
-        }
-        next()
-
-    } catch (error) {
-        return res.json({ success: false, message: error.message })
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.userId = decoded.id;
+        next();
+    } catch (err) {
+        return res.json({ success: false, message: err.message });
     }
+};
 
-}
- 
-
-
-
-
-
-export default authMiddleware
+export default authMiddleware;

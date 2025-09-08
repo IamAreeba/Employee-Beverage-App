@@ -35,7 +35,7 @@ const StoreContextProvider = (props) => {
         // The token means user is loggedin
         // From this token we can exactly atach cart data to specific use by fetching its Id
         if (token) {
-            await axiosInstance.post("/api/cart/add", { itemId }, { headers: { token } })
+            await axiosInstance.post("/api/cart/add", { itemId }, { headers: { Authorization: `Bearer ${token}` } })
         }
     }
 
@@ -47,7 +47,7 @@ const StoreContextProvider = (props) => {
         }))
 
         if (token) {
-            await axiosInstance.post("/api/cart/remove", { itemId }, { headers: { token } })
+            await axiosInstance.post("/api/cart/remove", { itemId }, { headers: { Authorization: `Bearer ${token}` } })
         }
     }
 
@@ -74,7 +74,7 @@ const StoreContextProvider = (props) => {
 
     // Load cart data
     const loadCartData = async (token) => {
-        const response = await axiosInstance.post("/api/cart/get", {}, { headers: { token } })
+        const response = await axiosInstance.post("/api/cart/get", {}, { headers: { Authorization: `Bearer ${token}` } })
 
         // Above we will get the response which we will show in cartData
         setCartItems(response.data.cartData)

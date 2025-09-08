@@ -14,7 +14,7 @@ const MyOrder = () => {
     const [data, setData] = useState([])
 
     const fetchOrdrs = async () => {
-        const responce = await axiosInstance.post("/api/order/userorders", {}, { headers: token })
+        const responce = await axiosInstance.post("/api/order/userorders", {}, {  headers: { Authorization: `Bearer ${token}` } })
         // if(responce.data.success){
         //     alert("We did it")
         //     console.log(responce.data)

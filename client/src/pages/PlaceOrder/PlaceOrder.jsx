@@ -60,7 +60,7 @@ const placeOrder = async (e) => {
 
   try {
     let response = await axiosInstance.post("/api/order/place", orderData, {
-      headers: { token }
+       headers: { Authorization: `Bearer ${token}` }
     });
 
     console.log("✅ Backend replied:", response.data);
