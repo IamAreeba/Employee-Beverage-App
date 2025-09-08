@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 // Now we can use this storage config which we created above
 const upload = multer({storage: storage})   // This middleware upload is created with which we can store image in upload folder
 
-foodRouter.post("/add", upload.single("image"), addFood)
+// foodRouter.post("/add", upload.single("image"), addFood)
 
 foodRouter.get('/list', listFood)
 

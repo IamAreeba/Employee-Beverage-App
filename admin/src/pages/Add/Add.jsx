@@ -29,7 +29,7 @@ const Add = ({ url }) => {
 
     // Whenever our state changes this get triggered
     useEffect(() => {
-        console.log(data)
+        // console.log(data)
     }, [data])
 
 
@@ -37,29 +37,29 @@ const Add = ({ url }) => {
     const onSubmitHandler = async (e) => {
         e.preventDefault()
         // Now we have to insert this form data in one form data
-        const formData = new FormData()
-        formData.append("name", data.name)
-        formData.append("description", data.description)
-        formData.append("price", Number(data.price))
-        formData.append("category", data.category)
-        formData.append("image", image)
+        // const formData = new FormData()
+        // formData.append("name", data.name)
+        // formData.append("description", data.description)
+        // formData.append("price", Number(data.price))
+        // formData.append("category", data.category)
+        // formData.append("image", image)
 
         // Now doing API call
         // We tested on backend with passing data throigh form so passed formData
-        const response = await axiosInstance.post(`${url}/api/food/add`, formData)
-        if (response.data.success) {
-            setData({
-                name: "",
-                description: "",
-                price: "",
-                category: "Coffee",
-            })
-            setImage(false)
-            toast.success(response.data.message)
-        }
-        else {
-            toast.error(response.data.message)
-        }
+        // const response = await axiosInstance.post(`${url}/api/food/add`, formData)
+        // if (response.data.success) {
+        //     setData({
+        //         name: "",
+        //         description: "",
+        //         price: "",
+        //         category: "Coffee",
+        //     })
+        //     setImage(false)
+        //     toast.success(response.data.message)
+        // }
+        // else {
+        //     toast.error(response.data.message)
+        // }
 
 
     }
@@ -68,8 +68,8 @@ const Add = ({ url }) => {
 
     return (
         <div className='add' >
-            <form onSubmit={onSubmitHandler} className='flex-col'>
-
+            {/* <form onSubmit={onSubmitHandler} className='flex-col'> */}
+             <form onSubmit={onSubmitHandler} className='flex-col'>
                 <div className="add-img-upload flex-col">
                     <p> Upload Image </p>
                     <label htmlFor="image">
