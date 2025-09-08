@@ -14,7 +14,7 @@ const FoodItem = ({ id, name, description, image, price }) => {
             <div className="food-item">
 
                 <div className="food-item-img-container">
-                    <img className="food-item-image" src={url+"/images/"+image} alt="" />
+                    <img className="food-item-image" src={`/images/${image}`} alt="" />
 
                     {/* We check if the fooditem count=0 we provide btn if count>0 we provide 1 counter */}
 

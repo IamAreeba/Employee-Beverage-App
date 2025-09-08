@@ -32,5 +32,12 @@ app.get('/', (req, res) => {
     res.send("API Working")
 })
 
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Local server running on http://localhost:${PORT}`);
+});
+
+
+
 // ✅ No app.listen() on Vercel
 export default app
