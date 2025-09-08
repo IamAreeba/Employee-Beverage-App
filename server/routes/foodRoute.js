@@ -8,16 +8,17 @@ const foodRouter = express.Router()
 // This is the disk storage config we did below
 // Image Storage Engine
 
-const storage = multer.diskStorage({
-    destination: "uploads",
-    filename: (req, file, cb) => {
-        return cb(null, `${Date.now()}${file.originalname}`)
-    }
-})
+// const storage = multer.diskStorage({
+//     destination: "uploads",
+//     filename: (req, file, cb) => {
+//         return cb(null, `${Date.now()}${file.originalname}`)
+//     }
+// })
 
 
 // Now we can use this storage config which we created above
-const upload = multer({storage: storage})   // This middleware upload is created with which we can store image in upload folder
+// This middleware upload is created with which we can store image in upload folder
+// const upload = multer({storage: storage})   
 
 // foodRouter.post("/add", upload.single("image"), addFood)
 
