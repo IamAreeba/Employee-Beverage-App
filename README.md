@@ -3,7 +3,6 @@
 
 Cross-platform system for employees to order beverages with customizations and recurring options, plus a staff portal for managing and delivering orders.
 
----
 
 ## 🚀 Live Demo
 
@@ -95,12 +94,6 @@ Cross-platform system for employees to order beverages with customizations and r
    cd ../admin   # for staff portal
    npm start
    ```
-
----
-
-## 📸 Screenshots (Optional)
-
-*Add 2–3 screenshots of mobile app + staff portal UI here.*
 
 ---
 
