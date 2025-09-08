@@ -69,7 +69,7 @@ const Cart = () => {
                 <div key={item._id} className='cart-item-title cart-items-item' >
 
                   {/* <p>{item.name}</p> */}
-                  <img src={url + "/images/" + item.image} alt="" />
+                  <img src={"/images/" + item.image} alt="" />
                   <p>{item.name}</p>
                   <p> ₨ {item.price} </p>
                   <p> {cartItems[item._id]} </p>                     {/* This will give quantity of the product */}
