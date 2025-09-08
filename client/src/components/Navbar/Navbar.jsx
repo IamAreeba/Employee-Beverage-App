@@ -33,7 +33,7 @@ const Navbar = ({ setShowLogin }) => {
 
             <ul className="navbar-menu">
                 <Link to='/' onClick={() => { setMenu("home") }} className={menu === 'home' ? 'active' : ''}>Home</Link>
-                {/* <Link to='/menu' onClick={() => { setMenu("menu") }} className={menu === 'menu' ? 'active' : ''}>Menu</Link> */}
+                <Link to='/menu' onClick={() => { setMenu("menu") }} className={menu === 'menu' ? 'active' : ''}>Menu</Link>
                 {/* <a href='#app-download' onClick={() => { setMenu("mobile") }} className={menu === 'mobile' ? 'active' : ''}>Mobile-App</a> */}
                 {/* <a href='#footer' onClick={() => { setMenu("contact") }} className={menu === 'contact' ? 'active' : ''}>Contact Us</a> */}
             </ul>
