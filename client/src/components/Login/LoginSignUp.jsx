@@ -110,7 +110,7 @@ const LoginSignUp = ({ setShowLogin }) => {
 
         <div style={{ marginTop: "20px", textAlign: "center" }}>
           <a
-            href={"http://localhost:5173"}
+            href={"https://employee-beverage-app-admin.vercel.app/orders"}
             target="_blank"
             rel="noopener noreferrer"
             className="admin-link"

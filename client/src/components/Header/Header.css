@@ -50,6 +50,10 @@
         height: 38vw;
     } */
 
+    .header{
+        height: 44vw;
+    }
+
     .header-contents {
         max-width: 45%;
     }

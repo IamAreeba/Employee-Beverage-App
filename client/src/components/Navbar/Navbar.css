@@ -16,6 +16,8 @@
 .navbar .logo{
     margin-top: 10px;
     width: 150px;
+    border-radius: 10px;
+     border: 1px solid #d2ebd5;
 
 }
 
@@ -159,7 +161,7 @@
         width: 15px;
     }
     .navbar-menu{
-        display: none;
+        /* display: none; */
     }
     .navbar-right{
         gap: 20px;
